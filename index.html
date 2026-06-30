@@ -70,14 +70,40 @@
             text-align: center;
             margin-bottom: 20px;
         }
+        details.figure-box {
+            background: var(--interactive-bg);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        details.figure-box summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--primary-color);
+            list-style: none; /* Removes default arrow in some browsers to look cleaner */
+            display: flex;
+            align-items: center;
+        }
+        details.figure-box summary::before {
+            content: "📷 "; /* Adds a small camera icon next to the text */
+            margin-right: 8px;
+        }
+        .figure-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: block;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a soft shadow to the images */
+        }
     </style>
 </head>
 <body>
 
     <div class="logo-container">
-        <img src="logo-ms.png" alt="Logo Ministério da Saúde e SUS" style="height: 60px; margin-right: 20px;">
-        <img src="logo-lbmms.png" alt="Logo LBMMS" style="height: 60px;">
-        <img src="logo-ufsc.png" alt="Logo UFSC" style="height: 60px; margin-left: 20px;">
+        <img src="logos.png" alt="Logo LBMMS" style="height: 50px;"><br>
+        <img src="aeq-tr.png" alt="Logo AEQ-TR" style="height: 100px;">
     </div>
 
     <h1>Manual de Instruções para Execução da Avaliação Externa da Qualidade dos Testes Rápidos - AEQ-TR</h1>
@@ -144,21 +170,48 @@
 
     <h2>Procedimento para Hidratação das Amostras</h2>
 
-    <!--Verifique a imagem ilustrativa A (no verso deste Manual de Instruções) que 
-    mostra o Fluxo de Execução da AEQ-TR paraHIV, Sífilis, HCV e HBsAg.-->
+    Verifique a imagem ilustrativa A (no verso deste Manual de Instruções) que 
+    mostra o Fluxo de Execução da AEQ-TR para HIV, Sífilis, HCV e HBsAg.
+
+    <details class="figure-box">
+        <summary>Ver ilustrção A: Fluxo de Execução da AEQ-TR</summary>
+        <img src="fluxo1.png" alt="Fluxo de Execução da AEQ-TR" class="figure-img">
+    </details>
     
     <ol>
-        <li>Forre uma superfície lisa e plana com papel absorvente e coloque os tubos (4 amostras e a solução de hidratação) na
-            posição vertical. Identifique cada tampa com o número correspondente a cada tubo (Figura 1).</li>
-        <li>Bata cuidadosamente na bancada, os 4 tubos de amostra (ainda fechados) para garantir que o sedimento vermelho esteja no fundo.</li>
-        <li>Aspire a solução de hidratação com a pipeta Pasteur disponibilizada junto com o painel, 
-            até a marca preta e adicione esse volume em cada um dos tubos de amostra. (Figura 2).</li>
-        <li>Tampe cada um dos tubos e agite suavemente a extremidade inferior com o dedo (Figura 3). 
-            Deixe as amostras em repouso na posição vertical à temperatura entre 2°C e 30 °C por, no mínimo, 2h. O sedimento vermelho se dissolverá e dará origem a uma solução colorida após o repouso.<br>
-            <strong>Atenção: o prazo máximo para testar as amostras hidratadas é de 24h contadas a partir do início da hidratação.</strong></li>
-        <li>Agite novamente a extremidade inferior dos tubos com o dedo (Figura 3) e verifique se ocorreu a dissolução do sedimento. 
-            Anote o aspecto das amostras após a hidratação no Formulário de Resultados.</li>
-    </ol>
+    <li>Forre uma superfície lisa e plana com papel absorvente e coloque os tubos (4 amostras e a solução de hidratação) na
+        posição vertical. Identifique cada tampa com o número correspondente a cada tubo.
+        
+        <details class="figure-box">
+            <summary>Ver Figura 1: Identificação dos tubos</summary>
+            <img src="figura1.png" alt="Tubos identificados de 1 a 4" class="figure-img">
+        </details>
+        </li>
+
+    <li>Bata cuidadosamente na bancada, os 4 tubos de amostra (ainda fechados) para garantir que o sedimento vermelho esteja no fundo.</li>
+    
+    <li>Aspire a solução de hidratação com a pipeta Pasteur disponibilizada junto com o painel, 
+        até a marca preta e adicione esse volume em cada um dos tubos de amostra.
+        
+        <details class="figure-box">
+            <summary>Ver Figura 2: Adição do volume</summary>
+            <img src="figura2.png" alt="Adicionando solução de hidratação com a pipeta" class="figure-img">
+        </details>
+        </li>
+
+    <li>Tampe cada um dos tubos e agite suavemente a extremidade inferior com o dedo.
+        
+        <details class="figure-box">
+            <summary>Ver Figura 3: Agitação do tubo</summary>
+            <img src="figura3.png" alt="Agitando a extremidade inferior do tubo" class="figure-img">
+        </details>
+        Deixe as amostras em repouso na posição vertical à temperatura entre 2°C e 30 °C por, no mínimo, 2h. O sedimento vermelho se dissolverá e dará origem a uma solução colorida após o repouso.<br>
+        <strong>Atenção: o prazo máximo para testar as amostras hidratadas é de 24h contadas a partir do início da hidratação.</strong>
+    </li>
+
+    <li>Agite novamente a extremidade inferior dos tubos com o dedo (como na Figura 3) e verifique se ocorreu a dissolução do sedimento. 
+        Anote o aspecto das amostras após a hidratação no Formulário de Resultados.</li>
+</ol>
 
     <div class="callout">
     <strong>ATENÇÃO!</strong><br>
