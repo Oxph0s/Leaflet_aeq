@@ -86,7 +86,7 @@
             align-items: center;
         }
         details.figure-box summary::before {
-            content: "📷 "; /* Adds a small camera icon next to the text */
+            content: "📷 ";
             margin-right: 8px;
         }
         .figure-img {
@@ -129,6 +129,8 @@
                 page-break-inside: avoid;
             }
 
+            button.btn-imprimir { display: none !important; } /* Hides the print button on paper */
+
             /* Set standard margins for the physical paper */
             @page {
                 margin: 2cm;
@@ -144,6 +146,12 @@
     </div>
 
     <h1>Manual de Instruções para Execução da Avaliação Externa da Qualidade dos Testes Rápidos - AEQ-TR</h1>
+
+    <div style="text-align: center; margin: 20px 0;">
+        <button class="btn-imprimir" onclick="prepararEImprimir()" style="background-color: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1rem; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+            🖨️ Imprimir Versão em Papel
+        </button>
+    </div>
 
     <h2>Princípio da AEQ-TR HIV, Sífilis, HCV e HBsAg:</h2>
     <p>A AEQ-TR avalia a execução dos testes rápidos (TR) pelos profissionais. A cada rodada, as instituições cadastradas
@@ -283,5 +291,25 @@
         <p><strong>E-mail:</strong> <a href="mailto:equipeaeq@gmail.com">equipeaeq@gmail.com</a></p>
     </div>
 
+    <script>
+        function prepararEImprimir() {
+            // 1. Open all the interactive boxes
+            document.querySelectorAll('details').forEach(function(caixa) {
+                caixa.setAttribute('open', 'true');
+            });
+            
+            // 2. Wait 500 milliseconds (0.5 seconds) for the browser to render the images, then trigger the print menu
+            setTimeout(function() {
+                window.print();
+            }, 500);
+        }
+
+        // 3. Automatically close the boxes after the user is done printing or cancels
+        window.addEventListener('afterprint', function() {
+            document.querySelectorAll('details').forEach(function(caixa) {
+                caixa.removeAttribute('open');
+            });
+        });
+    </script>
 </body>
 </html>
