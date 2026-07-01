@@ -97,6 +97,43 @@
             display: block;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a soft shadow to the images */
         }
+    
+    /* --- REGRAS PARA IMPRESSÃO --- */
+        @media print {
+            body {
+                background-color: white;
+                color: black; /* Saves colored ink */
+            }
+            
+            /* Remove shadows and backgrounds to save ink */
+            .callout, .contact-info, details.figure-box {
+                background-color: transparent !important;
+                border: 1px solid #ccc !important;
+                box-shadow: none !important;
+                page-break-inside: avoid; /* Prevents boxes from splitting across two pages */
+            }
+
+            /* Force hidden images inside <details> to show up on paper */
+            details.figure-box summary ~ * {
+                display: block !important; 
+            }
+            
+            /* Hide the camera icon, since you can't click paper */
+            details.figure-box summary::before {
+                display: none;
+            }
+
+            /* Ensure images don't get cut off */
+            .figure-img {
+                max-width: 100%;
+                page-break-inside: avoid;
+            }
+
+            /* Set standard margins for the physical paper */
+            @page {
+                margin: 2cm;
+            }
+        } 
     </style>
 </head>
 <body>
